@@ -1,4 +1,4 @@
-package SvetlanaOrlovskaya;
+package com;
 
 /**
  * Hello world!

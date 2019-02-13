@@ -1,5 +1,6 @@
 package SvetlanaOrlovskaya;
 
+import com.PageObject.MainPage;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
@@ -8,14 +9,20 @@ import static org.testng.Assert.assertTrue;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-{
+public class AppTest {
+    MainPage mainPage = new MainPage();
     /**
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void loadMaimPage(){
+
+        mainPage.goTo("https://dom.ria.com/ru/search/");
+
     }
+    @Test
+    public void quantityTest(){
+//        mainPage.
+    }
+
 }
