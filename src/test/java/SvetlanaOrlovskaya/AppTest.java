@@ -23,12 +23,13 @@ public class AppTest extends AbstractTestClass {
 
        Assert.assertTrue(mainPage.isMainLoaded(),"Check is Main page loaded.");
 
+
     }
     @Test
     public void comperingTiles(){
         int expected = mainPage.numberOfTheTilesOnMainPage();
         int actual = mainPage.actualNumberOfTheTilesThatDisplayed();
-         Assert.assertEquals(expected, actual, "Compering expected and actual tiles on the page. ");
+         Assert.assertEquals(expected, actual, "Compering expected and actual tiles on the page: ");
     }
-    @Test
+
 }
