@@ -4,6 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 
 public class AbstractPage {
-   protected static WebDriver driver = DriverSingelton.get();
+   public static WebDriver driver = DriverSingelton.get();
 
 }

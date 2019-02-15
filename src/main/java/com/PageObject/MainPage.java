@@ -1,7 +1,12 @@
 package com.PageObject;
 
+import io.qameta.allure.Allure;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainPage extends AbstractPage {
     public MainPage goTo (String url){
@@ -10,7 +15,7 @@ public class MainPage extends AbstractPage {
     }
     public  boolean isMainLoaded (){
 
-        return driver.findElement(By.id("searchTitleCategory")).getText().equalsIgnoreCase("Поиск недвижимости");
+        return driver.findElement(By.id("searchTitleCategory")).getText().equalsIgnoreCase("поиск недвижимости");
 
     }
 
@@ -21,8 +26,18 @@ public class MainPage extends AbstractPage {
         return this;
     }
 
-    public
- //           setNumberOfTiles
+    public int numberOfTheTilesOnMainPage (){
+        WebElement dropDown = driver.findElement(By.xpath("//*[@id=\"pagination\"]/div/div[2]/span/a"));
+        String stringOfNumber = dropDown.getText().split(" ")[0];
+        Allure.addAttachment("Numbers of the Tiles in Drop Down on Main Page by default: ", "Number: " + stringOfNumber);
+        return Integer.valueOf(stringOfNumber);
+    }
+
+    public int actualNumberOfTheTilesThatDisplayed() {
+        List<WebElement> arrayOfBlocks=driver.findElements(By.cssSelector(".wrap_desc"));
+        Allure.addAttachment("Numbers of the Tiles in Drop Down on Main Page by default actual: ", "Number: " + arrayOfBlocks.size());
+        return arrayOfBlocks.size();
+    }
 
 
 }

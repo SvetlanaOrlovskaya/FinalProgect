@@ -18,16 +18,8 @@ public class DriverSingelton {
     }
 
     private DriverSingelton() {
-        Settings settings = new Settings();
-          if ( settings.getBrowser().equalsIgnoreCase("chrome")){
           System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver.exe");
           driver = new ChromeDriver();
-          }
-          else
-          if ( settings.getBrowser().equalsIgnoreCase("edge")){
-              System.setProperty("webdriver.edge.driver", "Drivers\\edgedriver.exe");
-              driver = new EdgeDriver();
-          }
 
           driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
           driver.manage().window().maximize();
