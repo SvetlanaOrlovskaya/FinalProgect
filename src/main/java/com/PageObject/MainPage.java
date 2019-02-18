@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.PageObject.Utils.scrollToBottom;
+
 public class MainPage extends AbstractPage {
     public MainPage goTo (String url){
         driver.get(url);
@@ -19,13 +21,13 @@ public class MainPage extends AbstractPage {
 
     }
 
-    public  MainPage dropDown (int numbers){
+ /*   public  MainPage dropDown (int numbers){
 
         Select dropdown = new Select(driver.findElement(By.className("el-selected open")));
         dropdown.selectByValue(String.valueOf(numbers));
         return this;
     }
-
+*/
     public int numberOfTheTilesOnMainPage (){
         WebElement dropDown = driver.findElement(By.xpath("//*[@id=\"pagination\"]/div/div[2]/span/a"));
         String stringOfNumber = dropDown.getText().split(" ")[0];
@@ -38,6 +40,11 @@ public class MainPage extends AbstractPage {
         Allure.addAttachment("Numbers of the Tiles in Drop Down on Main Page by default actual: ", "Number: " + arrayOfBlocks.size());
         return arrayOfBlocks.size();
     }
+ /*   public MainPage setQuantityTiles(int number) {
+        scrollToBottom();
+        dropDownQuantity.click();
+    }
 
+*/
 
 }

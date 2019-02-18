@@ -31,5 +31,10 @@ public class AppTest extends AbstractTestClass {
         int actual = mainPage.actualNumberOfTheTilesThatDisplayed();
          Assert.assertEquals(expected, actual, "Compering expected and actual tiles on the page: ");
     }
+    @Test
+    public void changeValueToShow(){
+
+
+    }
 
 }
