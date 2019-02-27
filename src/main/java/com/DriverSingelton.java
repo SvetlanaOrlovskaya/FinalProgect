@@ -20,7 +20,7 @@ public class DriverSingelton {
     private DriverSingelton() {
           System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver.exe");
           driver = new ChromeDriver();
-
+            driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
           driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
           driver.manage().window().maximize();
 

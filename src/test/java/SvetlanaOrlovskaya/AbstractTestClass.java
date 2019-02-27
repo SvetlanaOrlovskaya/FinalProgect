@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class AbstractTestClass {
     @BeforeMethod
-    public void before(){
+    public void before() throws InterruptedException {
         new MainPage().goTo("https://dom.ria.com/ru/search/");
     }
 
